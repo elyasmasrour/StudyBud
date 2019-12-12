@@ -136,20 +136,14 @@ root.configure(background='gray')
 time_str = tk.StringVar()
 
 #VARIABLE PRESETS
-qpx=0
-qpy=165
-ctdpx=0
-ctdpy=50
+qpx, qpy= 0, 165
+ctdpx, ctdpy= 0, 50
 block=0
-ppx=124
-ppy=200
-ffpx=224
-ffpy=340
-rwx=0
-rwy=340
-cmx=112
-cmy=340
-motivation = ["Keep working! It's worth it.", "Hard work is the key to success.", "Do or do not. There is no try"]
+ppx, ppy= 124, 200
+ffpx, ffpy= 224, 340
+rwx, rwy= 0, 340
+cmx, cmy= 112, 340
+motivation= ["Keep working! It's worth it.", "Hard work is the key to success.", "Do or do not. There is no try"]
 
 #WIDGETS
 
