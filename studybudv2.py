@@ -30,10 +30,6 @@ def yesmusic():
     music.play()
     studytimer(10)
 
-
-
-
-
 def studytimer(timer):
     sound2.play()
     global block
@@ -50,13 +46,11 @@ def sleep():
     fastforward.place_forget()
     musiccontrol.place_forget()
 
-
 def breaktime():
     sound3.play()
     pauseplay.configure(image='')
     quote.configure(text='Great job! Take a quick break. ')
     count_down(10, 2)
-
 
 def count_down(timer, type):
     global block
@@ -208,9 +202,9 @@ currentmusic = tk.Button(screen, command=yesmusic, image=violin, borderwidth = 0
 #MUSIC
 
 sound1 = sa.WaveObject.from_wave_file(os.path.join(os.getcwd(), "pause.wav"))
-sound2 = sa.WaveObject.from_wave_file(os.path.join(os.getcwd(), "bear_growl_y.wav"))
+sound2 = sa.WaveObject.from_wave_file(os.path.join(os.getcwd(), "music", "bear_growl_y.wav"))
 sound3 = sa.WaveObject.from_wave_file(os.path.join(os.getcwd(), "end.wav"))
-music = sa.WaveObject.from_wave_file(os.path.join(os.getcwd(), "bear_growl_y.wav"))
+music = sa.WaveObject.from_wave_file(os.path.join(os.getcwd(), "music", "bear_growl_y.wav"))
 
 
 
