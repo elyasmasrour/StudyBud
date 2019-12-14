@@ -35,7 +35,7 @@ def studytimer(timer):
     global block
     block=0
     pauseplay.configure(image=pause2)
-    count_down(timer,1 )
+    count_down(timer,1)
 
 def sleep():
     global block
@@ -122,6 +122,11 @@ def color(c):
         pauseplay.config(bg="#FFFFFF")
         fastforward.configure(image=forward)
 
+def extract_music(str_directory):
+    directory = os.fsencode(str_directory)
+    music_files = [os.fsdecode(file) for file in os.listdir(directory)]
+    return music_files
+
 #NECESSARY
 root = tk.Tk()
 root.title("StudyBuddy")
@@ -191,25 +196,12 @@ fastforward = tk.Button(screen, command=yesmusic, image=forward, borderwidth = 0
 rewindbutton = tk.Button(screen, command=yesmusic, image=rewind, borderwidth = 0, highlightthickness = 0, bg = "#FFFFFF")
 currentmusic = tk.Button(screen, command=yesmusic, image=violin, borderwidth = 0, highlightthickness = 0, bg = "#FFFFFF")
 
-
-
-
-
-
-
-
-
 #MUSIC
-
+background_music = extract_music(os.path.join(os.getcwd(), "music"))
 sound1 = sa.WaveObject.from_wave_file(os.path.join(os.getcwd(), "pause.wav"))
-sound2 = sa.WaveObject.from_wave_file(os.path.join(os.getcwd(), "music", "bear_growl_y.wav"))
+sound2 = sa.WaveObject.from_wave_file(os.path.join(os.getcwd(), "music", "tiger.wav"))
 sound3 = sa.WaveObject.from_wave_file(os.path.join(os.getcwd(), "end.wav"))
-music = sa.WaveObject.from_wave_file(os.path.join(os.getcwd(), "music", "bear_growl_y.wav"))
-
-
-
-
-
+music = sa.WaveObject.from_wave_file(os.path.join(os.getcwd(), "music", "tiger.wav"))
 
 
 
