@@ -140,7 +140,7 @@ pauseplay = tk.Button(screen, command=pause, borderwidth = 0, highlightthickness
 pauseplay.place(x=136, y=250)
 
 sound1 = sa.WaveObject.from_wave_file(os.path.join(os.getcwd(), "sfx", "pause.wav"))
-sound2 = sa.WaveObject.from_wave_file(os.path.join(os.getcwd(), "sfx", "pause.wav"))
+sound2 = sa.WaveObject.from_wave_file(os.path.join(os.getcwd(), "sfx", "end.wav"))
 sound3 = sa.WaveObject.from_wave_file(os.path.join(os.getcwd(), "sfx", "end.wav"))
 
 #EXPERIMENTAL
