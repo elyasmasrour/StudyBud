@@ -1,2 +1,2 @@
 # StudyBud
-This is an app to help people manage their time and take breaks when needed. 
+A time management application that enables distraction-free studying
