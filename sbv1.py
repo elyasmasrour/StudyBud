@@ -3,6 +3,7 @@ import time
 import tkinter as tk
 import random
 import simpleaudio as sa
+import os
 
 def initialize():
 
@@ -132,23 +133,15 @@ quote = tk.Label(screen, text = "",font=('trade gothic',10, 'bold'), bg = "#2C66
 quote.place(x=60, y=210, width=200)
 
 
-play = tk.PhotoImage(file="PL.ppm")
-pause2 = tk.PhotoImage(file="PA.ppm")
+play = tk.PhotoImage(file= os.path.join(os.getcwd(), "assets", "PL.ppm"))
+pause2 = tk.PhotoImage(file=os.path.join(os.getcwd(), "assets", "PA.ppm"))
 
 pauseplay = tk.Button(screen, command=pause, borderwidth = 0, highlightthickness = 0, bg = "#2C666E")
 pauseplay.place(x=136, y=250)
 
-sound1 = sa.WaveObject.from_wave_file("pause.wav")
-sound2 = sa.WaveObject.from_wave_file("pause.wav")
-sound3 = sa.WaveObject.from_wave_file("end.wav")
-
-
-
-
-
-
-
-
+sound1 = sa.WaveObject.from_wave_file(os.path.join(os.getcwd(), "sfx", "pause.wav"))
+sound2 = sa.WaveObject.from_wave_file(os.path.join(os.getcwd(), "sfx", "pause.wav"))
+sound3 = sa.WaveObject.from_wave_file(os.path.join(os.getcwd(), "sfx", "end.wav"))
 
 #EXPERIMENTAL
 
