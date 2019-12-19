@@ -49,9 +49,9 @@ def count_down(timer, type):
             if (st=="00:00"):
                 break
             if (st[3:5]=="31"):
-                quote.configure(text=motivation[random.randint(0,2)])
+                quote.configure(text=motivation[random.randint(0,8)])
             if (st[3:5]=="01"):
-                quote.configure(text=motivation[random.randint(0,2)])
+                quote.configure(text=motivation[random.randint(0,8)])
             if (block==1):
                 temptimer=timer
                 break
@@ -108,9 +108,9 @@ time_str = tk.StringVar()
 
 #VARIABLE PRESETS
 
-
+f = open(os.path.join(os.getcwd(), "assets", "motivational_quotes.txt"))
 block=0
-motivation = ["Keep working! It's worth it.", "Hard work is the key to success.", "Do or do not. There is no try"]
+motivation = [line for line in f.readlines()]
 
 #WIDGETS
 
@@ -126,18 +126,19 @@ console.config(background="#FFFFFF")
 button = tk.Button(console, text='Program Begin', command=lambda: initialize()).pack(side = 'left')
 button2 = tk.Button(console, text='Sleep', command=sleep).pack(side = 'right')
 
-countdowntimer = tk.Label(screen, text = "",font=('arial',40, 'bold'), bg = "#2C666E")
+countdowntimer = tk.Label(screen, text = "", font=('arial', 100, 'bold'), bg = "#2C666E")
 countdowntimer.place(x=95,y=150, width=130)
 
 quote = tk.Label(screen, text = "",font=('trade gothic',10, 'bold'), bg = "#2C666E")
 quote.place(x=60, y=210, width=200)
 
 
-play = tk.PhotoImage(file= os.path.join(os.getcwd(), "assets", "PL.ppm"))
-pause2 = tk.PhotoImage(file=os.path.join(os.getcwd(), "assets", "PA.ppm"))
+play = tk.PhotoImage(file= os.path.join(os.getcwd(), "assets", "play.png"))
+pause2 = tk.PhotoImage(file=os.path.join(os.getcwd(), "assets", "pause.png"))
+
 
 pauseplay = tk.Button(screen, command=pause, borderwidth = 0, highlightthickness = 0, bg = "#2C666E")
-pauseplay.place(x=136, y=250)
+pauseplay.place(x=130, y=250)
 
 sound1 = sa.WaveObject.from_wave_file(os.path.join(os.getcwd(), "sfx", "pause.wav"))
 sound2 = sa.WaveObject.from_wave_file(os.path.join(os.getcwd(), "sfx", "end.wav"))
