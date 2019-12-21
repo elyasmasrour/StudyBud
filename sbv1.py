@@ -49,9 +49,9 @@ def count_down(timer, type):
             if (st=="00:00"):
                 break
             if (st[3:5]=="31"):
-                quote.configure(text=motivation[random.randint(0,8)])
+                quote.configure(text=motivation[random.randint(0,2)])
             if (st[3:5]=="01"):
-                quote.configure(text=motivation[random.randint(0,8)])
+                quote.configure(text=motivation[random.randint(0,2)])
             if (block==1):
                 temptimer=timer
                 break
@@ -147,7 +147,6 @@ sound3 = sa.WaveObject.from_wave_file(os.path.join(os.getcwd(), "sfx", "end.wav"
 #EXPERIMENTAL
 
 
-
-
 #REQUIRED
+root.wm_attributes('-fullscreen','true')
 root.mainloop()
