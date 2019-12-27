@@ -5,8 +5,8 @@ import random
 import os
 
 def initialize():
-    button.pack_forget()
-    studytimer(10)
+    button.place_forget()
+    studytimer(20)
 
 
 def studytimer(timer):
@@ -119,9 +119,8 @@ screen.pack_propagate(0)
 console = tk.Frame(root, width = 320, height = 450)
 console.grid(row=1, column = 0)
 console.config(background="#FFFFFF")
-button = tk.Button(console, text='Program Begin', command=lambda: initialize())
-button.pack(side = 'left')
-button2 = tk.Button(console, text='Sleep', command=sleep).pack(side = 'right')
+button = tk.Button(screen, text='Program Begin', command=lambda: initialize())
+button.place(x=10, y=150, width =300)
 
 countdowntimer = tk.Label(screen, text = "", font=('arial', 100, 'bold'), bg = "#2C666E")
 countdowntimer.place(x=85,y=150, width=150)
