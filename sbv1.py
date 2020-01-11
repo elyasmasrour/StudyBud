@@ -110,7 +110,7 @@ motivation = [line for line in f.readlines()]
 
 #WIDGETS
 
-screen = tk.Frame(root, width = 320, height = 450)
+screen = tk.Frame(root, width = 320, height = 480)
 screen.grid(row=0, column = 0)
 screen.config(background="#2C666E")
 screen.pack_propagate(0)
